@@ -4,7 +4,7 @@ export const CardWrapper = styled.div`
   box-shadow: 0 0 20px rgba(0, 0, 0, .05), 0 0px 40px rgba(0, 0, 0, .08);
   border-radius: 5px;
   overflow: hidden;
-  
+
   padding: 0 0 32px;
   margin: 48px auto 0;
   width: 250px;
@@ -22,15 +22,16 @@ export const CardBody = styled.div`
     }
 
     p{
-      padding: 15px 10px 0;
-      
+      padding:0 10px;
+      margin: 20px 0 0;
+
       color:#6C6667;
       font-weight: bold;
-      line-height: 1.5;
+      font-size: 14px;
     }
 
     p + p {
-      padding-top: 8px;  
+      margin-top: 5px;
     }
 
   }
