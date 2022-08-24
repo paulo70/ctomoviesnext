@@ -6,13 +6,16 @@ const params = {
   language: "pt-BR",
 }
 
-export const getMoviesPerDay = async () => {
+
+const getMoviesPerDay = async () => {
   try {
     const response = await API.get(`day`, { params: { ...params } });
     console.log(response, 'URL')
 
-    return response;
+    return response
   } catch (error) {
     throw error.response;
   }
 };
+
+export default getMoviesPerDay
