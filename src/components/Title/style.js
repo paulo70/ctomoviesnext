@@ -9,8 +9,12 @@ export const Content = styled.div`
 
 export const Paragraph = styled.p`
   text-transform: uppercase;
-  color: #a90000;
+  color: #0054FF;
   font-size: 18px;
   font-weight: bold;
   padding-bottom: 10px;
+
+  @media(max-width: 768px){
+    font-size: 14px;
+  }
 `
