@@ -8,11 +8,11 @@ export const Search = styled.input`
   text-align: left;
   text-transform: uppercase;
   padding: 10px;
-  
+
   width: 50%;
   height: 40px;
   margin-left: 30px;
-  
+
 
   &:focus,
   &:active {
@@ -24,6 +24,7 @@ export const Search = styled.input`
 
   @media (max-width: 768px) {
     margin-right: 10px;
+    margin-left: 10px;
     width: 100%;
-  } 
+  }
 `
