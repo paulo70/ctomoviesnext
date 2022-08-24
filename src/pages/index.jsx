@@ -1,8 +1,9 @@
+import axios from 'axios'
 import Container from '../components/Container'
 import Header from "../components/Header"
 import Tab from '../components/Tabs'
 
-import { getMoviesPerDay } from '../services/requests'
+import getMoviesPerDay from '../services/requests'
 
 export default function Home({ data }) {
   return (
@@ -17,13 +18,22 @@ export default function Home({ data }) {
 
 
 
-export async function getStaticProps() {
-  const res = await fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=e9da1b9b1bf2935bf963f9c98fd51e01')
-  const data = await res.json()
+export const getStaticProps = async () => {
 
-  return {
-    props: {
-      data,
-    },
+  try {
+    const { data } = await getMoviesPerDay()
+    return {
+      props: {
+        data,
+      },
+    }
+  } catch (error) {
+    return {
+      props: {
+        data: {}
+      }
+    }
   }
 }
+
+
