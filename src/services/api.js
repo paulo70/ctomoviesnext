@@ -6,7 +6,7 @@ const headers = {
 };
 
 export const API = axios.create({
-  baseURL: `https://api.themoviedb.org/3/movie`,
+  baseURL: `https://api.themoviedb.org/3/trending/movie`,
   headers
 })
 
