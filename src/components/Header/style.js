@@ -7,7 +7,7 @@ export const ContentHeader = styled.div`
   top: 0;
   left: 0;
   bottom:0vh;
-  z-index: 999px;
+  z-index: 10;
   display: flex;
   flex-direction: row;
   align-items: center;

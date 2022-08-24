@@ -4,7 +4,6 @@ export const Tabs = styled.div`
   overflow: hidden;
   background: #fff;
   height: 3em;
-  z-index: 1;
 
   text-transform: uppercase;
   font-weight: bold;
@@ -16,6 +15,7 @@ export const Tab = styled.button`
   cursor: pointer;
   width: 45%;
   position: relative;
+  z-index: 1;
 
   margin-right: 0.1em;
 
