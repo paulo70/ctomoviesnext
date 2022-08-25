@@ -10,4 +10,8 @@ export const API = axios.create({
   headers
 })
 
+// export const SEARCH = axios.create({
+//   baseURL: ``
+// })
+
 export default API;

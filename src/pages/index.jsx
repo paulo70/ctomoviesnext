@@ -3,7 +3,7 @@ import Container from '../components/Container'
 import Header from "../components/Header"
 import Tab from '../components/Tabs'
 
-import getMoviesPerDay from '../services/requests'
+import { getMoviesPerDay } from '../services/requests'
 
 export default function Home({ data }) {
   return (

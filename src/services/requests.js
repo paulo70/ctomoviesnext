@@ -7,15 +7,20 @@ const params = {
 }
 
 
-const getMoviesPerDay = async () => {
+export const getMoviesPerDay = async () => {
   try {
-    const response = await API.get(`day`, { params: { ...params } });
-    console.log(response, 'URL')
-
+    const response = await API.get(`day`, { params: { ...params } })
     return response
   } catch (error) {
     throw error.response;
   }
 };
 
-export default getMoviesPerDay
+export const getMoviesPerWeek = async () => {
+  try {
+    const response = await API.get(`week`, { params: { ...params } })
+    return response
+  } catch (error) {
+    throw error.response;
+  }
+}

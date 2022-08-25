@@ -1,5 +1,4 @@
 import { ContentHeader, Span } from "./style"
-import Search from '../Search'
 
 const Header = () => {
   return (
@@ -7,7 +6,6 @@ const Header = () => {
       <Span>
         movies cto
       </Span>
-      <Search />
     </ContentHeader>
   )
 }

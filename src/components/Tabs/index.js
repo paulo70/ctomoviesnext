@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { getMoviesPerWeek } from "../../services/requests";
 import { Tabs, Tab, Content } from "./style";
 
@@ -8,7 +8,6 @@ import ListMovies from '../ListMovies'
 const TabContent = ({ data }) => {
   const [active, setActive] = useState(0);
   const [weekMovies, setWeekMovies] = useState([])
-  console.log(weekMovies, 'aeae')
 
   const handleClick = e => {
     const index = parseInt(e.target.id, 0);
@@ -60,7 +59,7 @@ const TabContent = ({ data }) => {
       <>
         <Content active={active === 1}>
           {weekMovies?.map(movies => (
-            <ListMovies {...movies} key={movies.id} />
+            <ListMovies {...movies} key={movies?.id} />
           ))}
         </Content>
       </>
