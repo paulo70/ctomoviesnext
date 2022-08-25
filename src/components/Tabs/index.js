@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
+import { getMoviesPerWeek } from "../../services/requests";
 import { Tabs, Tab, Content } from "./style";
 
 import Title from '../Title'
@@ -6,15 +7,35 @@ import ListMovies from '../ListMovies'
 
 const TabContent = ({ data }) => {
   const [active, setActive] = useState(0);
-
-  console.log(data, 'vai amigaoo')
+  const [weekMovies, setWeekMovies] = useState([])
+  console.log(weekMovies, 'aeae')
 
   const handleClick = e => {
     const index = parseInt(e.target.id, 0);
     if (index !== active) {
       setActive(index);
     }
+
+    if (index === 1) {
+      handleMovies()
+    }
   };
+
+  const handleMovies = async () => {
+    try {
+      const reponse = await getMoviesPerWeek()
+      const result = reponse.data.results
+      setWeekMovies(result)
+    } catch (error) {
+      return error
+    }
+  }
+
+  useEffect(() => {
+    if (active === 1) {
+      handleMovies()
+    }
+  }, [active])
 
   return (
     <>
@@ -31,6 +52,14 @@ const TabContent = ({ data }) => {
       <>
         <Content active={active === 0}>
           {data.results.map(movies => (
+            <ListMovies {...movies} key={movies.id} />
+          ))}
+        </Content>
+      </>
+
+      <>
+        <Content active={active === 1}>
+          {weekMovies?.map(movies => (
             <ListMovies {...movies} key={movies.id} />
           ))}
         </Content>
